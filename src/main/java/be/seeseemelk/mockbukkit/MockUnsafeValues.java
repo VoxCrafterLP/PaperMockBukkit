@@ -1,10 +1,11 @@
 package be.seeseemelk.mockbukkit;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 import com.google.common.collect.Multimap;
+import net.kyori.adventure.text.flattener.ComponentFlattener;
+import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.serializer.plain.PlainComponentSerializer;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.UnsafeValues;
@@ -18,11 +19,39 @@ import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.PluginDescriptionFile;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 @SuppressWarnings("deprecation")
 public class MockUnsafeValues implements UnsafeValues
 {
 
 	private final Set<String> compatibleApiVersions = new HashSet<>(Arrays.asList("1.13", "1.14", "1.15", "1.16", "1.17", "1.18"));
+
+	public ComponentFlattener componentFlattener() {
+		return ComponentFlattener.basic();
+	}
+
+	public PlainComponentSerializer plainComponentSerializer() {
+		return PlainComponentSerializer.plain();
+	}
+
+	public PlainTextComponentSerializer plainTextSerializer() {
+		return PlainTextComponentSerializer.plainText();
+	}
+
+	public GsonComponentSerializer gsonComponentSerializer() {
+		return GsonComponentSerializer.gson();
+	}
+
+	public GsonComponentSerializer colorDownsamplingGsonComponentSerializer() {
+		return GsonComponentSerializer.colorDownsamplingGson();
+	}
+
+	public LegacyComponentSerializer legacyComponentSerializer() {
+		return LegacyComponentSerializer.legacySection();
+	}
 
 	@Override
 	public Material toLegacy(Material material)

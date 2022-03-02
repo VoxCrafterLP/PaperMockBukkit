@@ -23,6 +23,8 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
 import org.apache.commons.lang.Validate;
 import org.bukkit.BanEntry;
 import org.bukkit.BanList;
@@ -1676,4 +1678,16 @@ public class ServerMock extends Server.Spigot implements Server
         // TODO Auto-generated method stub
         throw new UnimplementedOperationException();
     }
+
+	public InventoryMock createInventory(InventoryHolder owner, InventoryType type, Component title, int size) {
+		return this.createInventory(owner, type, ((TextComponent) title).content(), size);
+	}
+
+	public InventoryMock createInventory(InventoryHolder owner, InventoryType type, Component title) {
+		return createInventory(owner, type, title, -1);
+	}
+
+	public InventoryMock createInventory(InventoryHolder owner, int size, Component title) {
+		return createInventory(owner, InventoryType.CHEST, title, size);
+	}
 }
