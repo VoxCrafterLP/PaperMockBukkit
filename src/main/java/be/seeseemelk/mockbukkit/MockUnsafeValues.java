@@ -29,27 +29,33 @@ public class MockUnsafeValues implements UnsafeValues
 
 	private final Set<String> compatibleApiVersions = new HashSet<>(Arrays.asList("1.13", "1.14", "1.15", "1.16", "1.17", "1.18"));
 
-	public ComponentFlattener componentFlattener() {
+	public ComponentFlattener componentFlattener()
+	{
 		return ComponentFlattener.basic();
 	}
 
-	public PlainComponentSerializer plainComponentSerializer() {
+	public PlainComponentSerializer plainComponentSerializer()
+	{
 		return PlainComponentSerializer.plain();
 	}
 
-	public PlainTextComponentSerializer plainTextSerializer() {
+	public PlainTextComponentSerializer plainTextSerializer()
+	{
 		return PlainTextComponentSerializer.plainText();
 	}
 
-	public GsonComponentSerializer gsonComponentSerializer() {
+	public GsonComponentSerializer gsonComponentSerializer()
+	{
 		return GsonComponentSerializer.gson();
 	}
 
-	public GsonComponentSerializer colorDownsamplingGsonComponentSerializer() {
+	public GsonComponentSerializer colorDownsamplingGsonComponentSerializer()
+	{
 		return GsonComponentSerializer.colorDownsamplingGson();
 	}
 
-	public LegacyComponentSerializer legacyComponentSerializer() {
+	public LegacyComponentSerializer legacyComponentSerializer()
+	{
 		return LegacyComponentSerializer.legacySection();
 	}
 

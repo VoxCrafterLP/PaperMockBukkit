@@ -1167,15 +1167,18 @@ class PlayerMockTest
 	}
 
 	@Test
-	void testFly_NotAllowed() {
-		assertThrows(IllegalArgumentException.class, () -> {
+	void testFly_NotAllowed()
+	{
+		assertThrows(IllegalArgumentException.class, () ->
+		{
 			player.setAllowFlight(false);
 			player.setFlying(true);
 		});
 	}
 
 	@Test
-	void testFly_DisabledWhenNotAllowed() {
+	void testFly_DisabledWhenNotAllowed()
+	{
 		player.setAllowFlight(true);
 		player.setFlying(true);
 		player.setAllowFlight(false);

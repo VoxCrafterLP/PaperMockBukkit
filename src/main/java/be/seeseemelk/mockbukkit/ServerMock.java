@@ -1644,50 +1644,53 @@ public class ServerMock extends Server.Spigot implements Server
 		throw new UnsupportedOperationException("Not supported.");
 	}
 
-    @Override
-    public int getTicksPerSpawns(@NotNull SpawnCategory spawnCategory)
-    {
-        // TODO Auto-generated method stub
-        throw new UnimplementedOperationException();
-    }
+	@Override
+	public int getTicksPerSpawns(@NotNull SpawnCategory spawnCategory)
+	{
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 
-    @Override
-    public PlayerProfile createPlayerProfile(@Nullable UUID uniqueId, @Nullable String name)
-    {
-        // TODO Auto-generated method stub
-        throw new UnimplementedOperationException();
-    }
+	@Override
+	public PlayerProfile createPlayerProfile(@Nullable UUID uniqueId, @Nullable String name)
+	{
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 
-    @Override
-    public PlayerProfile createPlayerProfile(@NotNull UUID uniqueId)
-    {
-        // TODO Auto-generated method stub
-        throw new UnimplementedOperationException();
-    }
+	@Override
+	public PlayerProfile createPlayerProfile(@NotNull UUID uniqueId)
+	{
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 
-    @Override
-    public PlayerProfile createPlayerProfile(@NotNull String name)
-    {
-        // TODO Auto-generated method stub
-        throw new UnimplementedOperationException();
-    }
+	@Override
+	public PlayerProfile createPlayerProfile(@NotNull String name)
+	{
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 
-    @Override
-    public int getSpawnLimit(@NotNull SpawnCategory spawnCategory)
-    {
-        // TODO Auto-generated method stub
-        throw new UnimplementedOperationException();
-    }
+	@Override
+	public int getSpawnLimit(@NotNull SpawnCategory spawnCategory)
+	{
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 
-	public InventoryMock createInventory(InventoryHolder owner, InventoryType type, Component title, int size) {
+	public InventoryMock createInventory(InventoryHolder owner, InventoryType type, Component title, int size)
+	{
 		return this.createInventory(owner, type, ((TextComponent) title).content(), size);
 	}
 
-	public InventoryMock createInventory(InventoryHolder owner, InventoryType type, Component title) {
+	public InventoryMock createInventory(InventoryHolder owner, InventoryType type, Component title)
+	{
 		return createInventory(owner, type, title, -1);
 	}
 
-	public InventoryMock createInventory(InventoryHolder owner, int size, Component title) {
+	public InventoryMock createInventory(InventoryHolder owner, int size, Component title)
+	{
 		return createInventory(owner, InventoryType.CHEST, title, size);
 	}
 }
