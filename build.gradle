@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
     api "org.spigotmc:spigot-api:${gradle.ext.apiVersionFull}"
-    api("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
+    api("io.papermc.paper:paper-api:${gradle.ext.apiVersionFull}")
     implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     implementation 'org.hamcrest:hamcrest-library:2.2'
     implementation 'commons-io:commons-io:2.11.0'
